@@ -205,7 +205,7 @@ h1 {
 }
 
 .device {
-  width: min(430px, 100%);
+  width: min(360px, 100%);
   border-radius: 54px;
   padding: 12px;
   background: linear-gradient(165deg, #1f2430, #090c12);
@@ -247,7 +247,7 @@ h1 {
 
 .device-screen {
   aspect-ratio: 430 / 932;
-  border-radius: 40px;
+  border-radius: 36px;
   padding: 0;
   background: #0f1420;
   overflow: hidden;
@@ -256,9 +256,9 @@ h1 {
 .hero-shot {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center top;
-  border-radius: 40px;
+  border-radius: 36px;
   background: #0f1420;
 }
 
@@ -601,7 +601,7 @@ h1 {
 
   .device {
     width: 100%;
-    max-width: 390px;
+    max-width: 330px;
   }
 
   .feature-grid {

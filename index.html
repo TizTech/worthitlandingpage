@@ -3,54 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Worth It? | Before you buy it, ask if it's worth it.</title>
+    <title>Worth It? - See what things really cost</title>
     <meta
       name="description"
-      content="Worth It? is a premium iPhone app that translates prices into hours of your life."
+      content="Worth It? helps you translate prices into hours of your life before you buy."
     />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <div class="glow glow-a" aria-hidden="true"></div>
-    <div class="glow glow-b" aria-hidden="true"></div>
-
-    <header class="header-wrap">
-      <div class="nav-shell container">
-        <a href="#" class="brand" aria-label="Worth It? home">
-          <span class="brand-dot"></span>
+    <header class="site-header">
+      <nav class="container nav-row">
+        <a href="#" class="brand" aria-label="Worth It home">
+          <span class="brand-mark">W</span>
           Worth It?
         </a>
-        <nav class="nav-links">
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links desktop-nav">
           <a href="#features">Features</a>
           <a href="#how">How it works</a>
           <a href="#privacy">Privacy</a>
           <a href="#download">Download</a>
-        </nav>
-        <a class="btn btn-nav" href="https://apps.apple.com/app/id1234567890" target="_blank" rel="noreferrer">
+        </div>
+
+        <a class="btn btn-primary desktop-download" href="https://apps.apple.com/app/id1234567890" target="_blank" rel="noreferrer">
           Download App
         </a>
+      </nav>
+
+      <div id="mobile-menu" class="mobile-menu" hidden>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#download">Download</a>
       </div>
     </header>
 
     <main>
-      <section class="hero container reveal">
-        <div class="hero-phone" data-float>
-          <div class="phone-halo" aria-hidden="true"></div>
-          <div class="phone">
-            <div class="phone-notch" aria-hidden="true"></div>
-            <div class="phone-screen">
-              <div class="screen-row">
-                <p class="kicker">Worth It?</p>
-                <span class="chip">Live</span>
-              </div>
-              <p class="price">$249</p>
+      <section class="hero section container reveal">
+        <div class="hero-copy">
+          <h1>Before you buy it, ask if it's worth it.</h1>
+          <p>
+            Worth It? is the simple iPhone app that turns prices into hours of your life,
+            so spending decisions feel more honest.
+          </p>
+
+          <div class="hero-actions">
+            <a class="app-store-badge" href="https://apps.apple.com/app/id1234567890" target="_blank" rel="noreferrer" aria-label="Download on the App Store">
+              <img src="assets/app-store-badge.svg" alt="Download on the App Store" />
+            </a>
+            <a class="btn btn-secondary" href="#how">See how it works</a>
+          </div>
+        </div>
+
+        <div class="hero-device-wrap">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="device" data-float>
+            <div class="device-notch"></div>
+            <div class="device-screen">
+              <p class="screen-label">Worth It?</p>
+              <p class="screen-price">$149</p>
               <h2>6.2 hours</h2>
-              <p class="screen-sub">This costs 6.2 hours of work.</p>
-              <div class="mini-stats">
+              <p class="screen-note">This costs 6.2 hours of work.</p>
+              <div class="screen-stats">
                 <div>
-                  <span>Weekly impact</span>
+                  <span>Weekly share</span>
                   <strong>17%</strong>
                 </div>
                 <div>
@@ -61,116 +88,125 @@
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="hero-copy">
-          <div class="rating-row">
-            <span class="stars" aria-hidden="true">★★★★★</span>
-            <span>4.8 rating</span>
-            <span class="sep">•</span>
-            <span>Featured app</span>
+      <section id="how" class="section container reveal how">
+        <div class="how-preview">
+          <div class="soft-panel">
+            <p class="panel-title">Main calculator</p>
+            <div class="calc-line">
+              <span class="label">Item price</span>
+              <strong>$249</strong>
+            </div>
+            <div class="calc-line">
+              <span class="label">Real cost</span>
+              <strong>6.8 hours</strong>
+            </div>
+            <div class="calc-line">
+              <span class="label">Verdict</span>
+              <strong>Worth thinking about</strong>
+            </div>
           </div>
-          <h1>Before you buy it, ask if it's worth it.</h1>
-          <p>
-            A simple iPhone app that translates prices into hours of your life,
-            so spending decisions feel clear and intentional.
-          </p>
-          <div class="hero-actions">
-            <a class="app-store-badge" href="https://apps.apple.com/app/id1234567890" target="_blank" rel="noreferrer" aria-label="Download on the App Store">
-              <img src="assets/app-store-badge.svg" alt="Download on the App Store" />
-            </a>
-            <a class="btn btn-ghost" href="#how">See how it works</a>
-          </div>
+        </div>
+
+        <div class="how-steps">
+          <h2>How it works</h2>
+
+          <article class="step-item">
+            <span class="step-no">01</span>
+            <h3>Enter your pay</h3>
+            <p>Set your hourly, daily, weekly, monthly, or yearly income.</p>
+          </article>
+
+          <article class="step-item">
+            <span class="step-no">02</span>
+            <h3>Type a price</h3>
+            <p>Drop in the cost of whatever you are about to buy.</p>
+          </article>
+
+          <article class="step-item no-border">
+            <span class="step-no">03</span>
+            <h3>See the true cost</h3>
+            <p>Instantly view how many hours of your life it represents.</p>
+          </article>
         </div>
       </section>
 
       <section id="features" class="section container reveal">
-        <div class="section-head">
-          <p class="eyebrow">Core Features</p>
-          <h2>Focused, personal, and fast.</h2>
+        <div class="section-heading">
+          <h2>Built to feel simple and honest.</h2>
+          <p>Everything is designed around one decision: is this purchase worth your life hours?</p>
         </div>
+
         <div class="feature-grid">
-          <article class="card">
-            <div class="icon">⚡</div>
+          <article class="feature-card">
+            <div class="mock-screen mock-a"></div>
             <h3>Instant calculations</h3>
-            <p>Convert any price into work hours the moment you type.</p>
+            <p>Results update as you type, with no extra steps.</p>
           </article>
-          <article class="card">
-            <div class="icon">◎</div>
+          <article class="feature-card">
+            <div class="mock-screen mock-b"></div>
             <h3>Personalized to you</h3>
-            <p>Based on your income mode, schedule, and optional tax estimate.</p>
+            <p>Based on your income setup, schedule, currency, and optional tax estimate.</p>
           </article>
-          <article class="card">
-            <div class="icon">◌</div>
+          <article class="feature-card">
+            <div class="mock-screen mock-c"></div>
             <h3>Think before spending</h3>
-            <p>Understand the true time cost behind purchases before checkout.</p>
+            <p>Get a verdict that makes each purchase feel real.</p>
+          </article>
+          <article class="feature-card">
+            <div class="mock-screen mock-d"></div>
+            <h3>Barcode scan flow</h3>
+            <p>Scan a code, assign a price, and evaluate it quickly.</p>
+          </article>
+          <article class="feature-card">
+            <div class="mock-screen mock-e"></div>
+            <h3>Private by default</h3>
+            <p>No account, no cloud dependency, no tracking required.</p>
+          </article>
+          <article class="feature-card">
+            <div class="mock-screen mock-f"></div>
+            <h3>Premium iOS feel</h3>
+            <p>Smooth animations, clear typography, and tactile layout.</p>
           </article>
         </div>
       </section>
 
-      <section id="how" class="section container reveal">
-        <div class="section-head">
-          <p class="eyebrow">How It Works</p>
-          <h2>Three steps, one better decision.</h2>
-        </div>
-        <div class="steps-grid">
-          <article class="step card">
-            <span class="step-no">01</span>
-            <h3>Enter your pay</h3>
-            <p>Set hourly, daily, weekly, monthly, or yearly earnings.</p>
-          </article>
-          <article class="step card">
-            <span class="step-no">02</span>
-            <h3>Type a price</h3>
-            <p>Drop in the cost of anything you are about to buy.</p>
-          </article>
-          <article class="step card">
-            <span class="step-no">03</span>
-            <h3>See the life cost</h3>
-            <p>Instantly view required work hours and a clear verdict.</p>
-          </article>
+      <section id="privacy" class="section container reveal">
+        <div class="privacy-block">
+          <h2>No accounts. No tracking.</h2>
+          <p>Your profile and calculations stay on your device.</p>
         </div>
       </section>
 
-      <section class="section container reveal">
-        <div class="section-head">
-          <p class="eyebrow">App Preview</p>
-          <h2>Designed like a premium iOS product.</h2>
-        </div>
-        <div class="screens-grid">
-          <article class="screen-card">
-            <p class="kicker">Calculator</p>
-            <h3>"6.8 hours"</h3>
-            <p>Large live result with weekly impact and shift equivalent.</p>
-          </article>
-          <article class="screen-card">
-            <p class="kicker">Verdict</p>
-            <h3>"Worth thinking about"</h3>
-            <p>Short emotional guidance that keeps spending decisions human.</p>
-          </article>
-          <article class="screen-card">
-            <p class="kicker">Barcode Scan</p>
-            <h3>Scan. Price. Decide.</h3>
-            <p>Capture a barcode and assign a price in one smooth flow.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="privacy" class="section container reveal privacy-block">
-        <p class="eyebrow">Privacy</p>
-        <h2>No accounts. No tracking.</h2>
-        <p class="privacy-copy">Your data stays on your device. Worth It? is local-first by default.</p>
-      </section>
-
-      <section id="download" class="section container reveal cta-block">
+      <section id="download" class="section container reveal cta">
         <h2>Start thinking about money differently.</h2>
-        <a class="app-store-badge app-store-badge-large" href="https://apps.apple.com/app/id1234567890" target="_blank" rel="noreferrer" aria-label="Download on the App Store">
+        <a class="app-store-badge" href="https://apps.apple.com/app/id1234567890" target="_blank" rel="noreferrer" aria-label="Download on the App Store">
           <img src="assets/app-store-badge.svg" alt="Download on the App Store" />
         </a>
       </section>
     </main>
 
-    <footer class="footer container">
-      <p>© <span id="year"></span> Worth It?</p>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Worth It?</h4>
+          <p>A simple iPhone app for smarter spending decisions.</p>
+        </div>
+        <div>
+          <h5>Product</h5>
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#download">Download</a>
+        </div>
+        <div>
+          <h5>Legal</h5>
+          <a href="#privacy">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="mailto:support@example.com">Support</a>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Worth It?</p>
     </footer>
 
     <script src="script.js"></script>

@@ -227,6 +227,27 @@ h1 {
   box-shadow: 0 16px 40px rgba(126, 240, 184, 0.32);
 }
 
+.app-store-badge {
+  display: inline-flex;
+  border-radius: 12px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.app-store-badge img {
+  display: block;
+  width: 182px;
+  height: auto;
+}
+
+.app-store-badge:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 10px 20px rgba(126, 240, 184, 0.2));
+}
+
+.app-store-badge-large img {
+  width: 210px;
+}
+
 .btn-ghost {
   padding: 14px 22px;
   color: #d8dfeb;
@@ -571,6 +592,14 @@ h1 {
 
   .phone {
     border-radius: 40px;
+  }
+
+  .app-store-badge img {
+    width: 168px;
+  }
+
+  .app-store-badge-large img {
+    width: 192px;
   }
 
   .phone-screen {

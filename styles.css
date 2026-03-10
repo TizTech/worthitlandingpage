@@ -205,39 +205,60 @@ h1 {
 }
 
 .device {
-  width: min(390px, 100%);
-  border-radius: 48px;
-  padding: 11px;
-  background: linear-gradient(165deg, #222733, #0f1219);
-  box-shadow: 0 40px 90px rgba(35, 39, 50, 0.28);
+  width: min(430px, 100%);
+  border-radius: 54px;
+  padding: 12px;
+  background: linear-gradient(165deg, #1f2430, #090c12);
+  box-shadow:
+    0 38px 90px rgba(24, 28, 39, 0.36),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
   transform-style: preserve-3d;
   transition: transform 0.16s ease;
+  position: relative;
+}
+
+.device::before,
+.device::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  width: 3px;
+  border-radius: 999px;
+  background: rgba(25, 30, 39, 0.9);
+}
+
+.device::before {
+  top: 170px;
+  height: 64px;
+}
+
+.device::after {
+  top: 248px;
+  height: 86px;
 }
 
 .device-notch {
-  width: 44%;
-  height: 24px;
+  width: 38%;
+  height: 30px;
   margin: 0 auto 10px;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 20px 20px;
   background: #0a0d12;
 }
 
 .device-screen {
-  min-height: 620px;
-  border-radius: 36px;
-  padding: 12px;
+  aspect-ratio: 430 / 932;
+  border-radius: 40px;
+  padding: 0;
   background: #0f1420;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .hero-shot {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center top;
-  border-radius: 24px;
+  border-radius: 40px;
   background: #0f1420;
 }
 
@@ -538,7 +559,7 @@ h1 {
   }
 
   .feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 }
 
@@ -580,11 +601,7 @@ h1 {
 
   .device {
     width: 100%;
-    max-width: 360px;
-  }
-
-  .device-screen {
-    min-height: 540px;
+    max-width: 390px;
   }
 
   .feature-grid {

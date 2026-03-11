@@ -698,6 +698,23 @@ h1 {
   color: var(--footer-link-hover);
 }
 
+.footer-credit {
+  width: var(--container);
+  margin: 24px auto 0;
+  color: var(--footer-copyright);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.footer-credit a {
+  color: var(--footer-link);
+  text-decoration: none;
+}
+
+.footer-credit a:hover {
+  color: var(--footer-link-hover);
+}
+
 .copyright {
   text-align: center;
   color: var(--footer-copyright);

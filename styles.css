@@ -726,6 +726,72 @@ h1 {
   font-size: 0.94rem;
 }
 
+.legal-main {
+  width: var(--container);
+  margin: 0 auto;
+  padding: clamp(42px, 7vw, 74px) 0;
+}
+
+.legal-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 44px);
+  box-shadow: 0 14px 30px var(--card-shadow);
+}
+
+.legal-card h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.08;
+}
+
+.legal-meta {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.legal-section + .legal-section {
+  margin-top: 26px;
+}
+
+.legal-section h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  margin-bottom: 8px;
+}
+
+.legal-section p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.legal-section p + p {
+  margin-top: 10px;
+}
+
+.legal-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.legal-list li + li {
+  margin-top: 8px;
+}
+
+.legal-back-link {
+  display: inline-flex;
+  margin-bottom: 18px;
+  text-decoration: none;
+  color: var(--nav-link);
+  font-weight: 600;
+}
+
+.legal-back-link:hover {
+  color: var(--nav-link-hover);
+}
+
 .menu-toggle {
   display: none;
   border: 0;

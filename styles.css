@@ -640,6 +640,10 @@ h1 {
   text-align: center;
 }
 
+.privacy-block h2 {
+  color: #ffffff;
+}
+
 .privacy-block p {
   color: var(--privacy-text);
   margin-top: 12px;

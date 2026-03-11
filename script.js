@@ -3,12 +3,22 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 const floatingDevice = document.querySelector('[data-float]');
 const themeToggle = document.getElementById('theme-toggle');
+const heroScreenImage = document.getElementById('hero-screen-image');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 const storedTheme = localStorage.getItem('worthit-theme');
 
+function updateHeroScreen(theme) {
+  if (!heroScreenImage) return;
+  const lightSrc = heroScreenImage.dataset.lightSrc;
+  const darkSrc = heroScreenImage.dataset.darkSrc;
+  if (!lightSrc || !darkSrc) return;
+  heroScreenImage.src = theme === 'dark' ? darkSrc : lightSrc;
+}
+
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
+  updateHeroScreen(theme);
   if (themeToggle) {
     const isDark = theme === 'dark';
     themeToggle.textContent = isDark ? 'Light' : 'Dark';

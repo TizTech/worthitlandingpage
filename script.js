@@ -5,7 +5,6 @@ const floatingDevice = document.querySelector('[data-float]');
 const themeToggle = document.getElementById('theme-toggle');
 const heroScreenImage = document.getElementById('hero-screen-image');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 const storedTheme = localStorage.getItem('worthit-theme');
 
 function updateHeroScreen(theme) {
@@ -27,7 +26,7 @@ function applyTheme(theme) {
   }
 }
 
-const initialTheme = storedTheme || (themeQuery.matches ? 'dark' : 'light');
+const initialTheme = storedTheme || 'light';
 applyTheme(initialTheme);
 
 if (!prefersReducedMotion) {
@@ -79,12 +78,6 @@ if (themeToggle) {
     applyTheme(next);
   });
 }
-
-themeQuery.addEventListener('change', (event) => {
-  if (!localStorage.getItem('worthit-theme')) {
-    applyTheme(event.matches ? 'dark' : 'light');
-  }
-});
 
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());

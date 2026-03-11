@@ -2,7 +2,23 @@ const reveals = document.querySelectorAll('.reveal');
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 const floatingDevice = document.querySelector('[data-float]');
+const themeToggle = document.getElementById('theme-toggle');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+const storedTheme = localStorage.getItem('worthit-theme');
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  if (themeToggle) {
+    const isDark = theme === 'dark';
+    themeToggle.textContent = isDark ? 'Light' : 'Dark';
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+}
+
+const initialTheme = storedTheme || (themeQuery.matches ? 'dark' : 'light');
+applyTheme(initialTheme);
 
 if (!prefersReducedMotion) {
   const observer = new IntersectionObserver(
@@ -44,6 +60,21 @@ if (menuToggle && mobileMenu) {
     });
   });
 }
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('worthit-theme', next);
+    applyTheme(next);
+  });
+}
+
+themeQuery.addEventListener('change', (event) => {
+  if (!localStorage.getItem('worthit-theme')) {
+    applyTheme(event.matches ? 'dark' : 'light');
+  }
+});
 
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
